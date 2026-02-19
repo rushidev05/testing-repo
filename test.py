@@ -3,7 +3,7 @@ import asyncio
 from app import Application
 
 
-data = 
+data = [
     {
         "id": 1,
         "identifier": "u1",
@@ -21,7 +21,7 @@ data =
 ]
 
 
-pytest.mark.asyncio
+@pytest.mark.asyncio
 async def test_bootstrap():
     app = Application(data)
     results = await app.bootstrap()
