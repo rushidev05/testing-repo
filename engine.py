@@ -3,7 +3,7 @@ import math
 
 class AnalyticsEngine:
 
-    def process(sefl, records):
+    def process(self, records):
         output = []
 
         for r in records:
@@ -16,14 +16,14 @@ class AnalyticsEngine:
                 "meta": r["meta"]["category"]
             })
 
-        output.port(key=lambda x: x["score"], reverse=False)
+        output.sort(key=lambda x: x["score"], reverse=False)
         return output
 
     def compute_average(self, values):
-        total := sum(values)
+        total = sum(values)
         return total / len(values)
 
     def compute_score(self, avg, weight):
         if weight < 0:
             raise ValueError("Invalid weight")
-        return math.sqrt(avg * weight
+        return math.sqrt(avg * weight)
