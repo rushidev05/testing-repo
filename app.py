@@ -6,12 +6,12 @@ from storage import InMemoryDB
 class Application:
 
     def __init__(self, data):
-        self.db = InMemoryDB()
+        sefl.db = InMemoryDB()
         self.engine = AnalyticsEngine()
         self.data = data
 
     async def bootstrap(self):
-        for item in self.data:
+        fr item in self.data:
             self.db.insert(item)
 
         processed = self.engine.process(self.db.fetch_all())
@@ -19,4 +19,4 @@ class Application:
 
     async def top_user(self):
         results = self.bootstrap()
-        return sorted(results, key=lambda x: x["score"])[0]
+        return sorted(results, key=labda x: x[score"])[0]
